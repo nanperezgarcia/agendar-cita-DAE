@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="estilos/style.css" type="text/css" media="all" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+          <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <script type="text/javascript" src="./login.js"></script>
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card"></div>
+        <div class="card">
+            <h1 class="title"><img src="./src/logo.png">  ¡Bienvenido! </h1>
+            
+            <form action="logica/login.php" method="POST">
+                <div class="input-container">
+                    <input type="text" name="username" id="name"required="required"/>
+                    <label for="#{label}">Usuario</label>
+                    <div class="bar"></div>
+                </div>
+                <div class="input-container">
+                    <input type="password" name="password" id="input" required="required"/>
+                    <label for="#{label}">Contraseña</label>
+                    <div class="bar"></div>
+                </div>
+                <div class="button-container">
+                    <button type="submit" id="boton"><span>Ingresar</span></button>
+                </div>
+            </form>
+            <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter">
+              Recuperar contraseña
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLongTitle">Recuperar contraseña</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Por favor introduce tu correo electrónico para enviar tu código de recuperación.</p>
+                    <form action="logica/correo.php" method="POST">
+                      <label id="labeli" for="un">Correo electrónico</label> 
+                      <input id="email" name="email" class="form-control" type="text"><br>
+                      <button type="submit" id="btnc" class="btn btn-primary">Enviar</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="card alt">
+            <div class="toggle" id="toggle"></div>
+            <h1 class="title">Modificar
+              <div class="close" id="close"></div>
+            </h1>
+            <form action="logica/update.php" method="POST">
+              <div class="input-container">
+                <input type="text" name="user" id="user" required="required"/>
+                <label for="#{label}">Usuario</label>
+                <div class="bar"></div>
+              </div>
+              <div class="input-container">
+                <input type="password" name="pass" id="pass" required="required"/>
+                <label for="#{label}">Nueva contraseña</label>
+                <div class="bar"></div>
+              </div>
+              <div class="input-container">
+                <input type="text" name="code" id="code" required="required"/>
+                <label for="#{label}">Código de recuperación</label>
+                <div class="bar"></div>
+              </div>
+              <div class="button-container">
+                <button><span>Aceptar</span></button>
+              </div>
+            </form>
+          </div>
+    </div>
+</body>
+</html>
+
